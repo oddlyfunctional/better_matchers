@@ -1,6 +1,6 @@
 # BetterMatchers
 
-TODO: Write a gem description
+Some matchers for making RSpec tests more semantic.
 
 ## Installation
 
@@ -18,7 +18,8 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+	user.should have_error(:blank).on :name
+	user.should_not have_error(:invalid).on :email
 
 ## Contributing
 
