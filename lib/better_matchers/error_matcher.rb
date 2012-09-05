@@ -1,3 +1,5 @@
+require 'rspec'
+
 RSpec::Matchers.define :have_error do |error|
 
   def error_message(record, attribute, error)
