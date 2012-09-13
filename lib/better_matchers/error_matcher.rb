@@ -3,7 +3,8 @@ require 'rspec'
 RSpec::Matchers.define :have_error do |error|
 
   def error_message(record, attribute, error)
-    I18n.translate("activerecord.errors.models.#{record.class.to_s.underscore}.attributes.#{attribute}.#{error}")
+    I18n.translate("activerecord.errors.models.#{record.class.to_s.underscore}.attributes.#{attribute}.#{error}",
+                  :model => record.class.to_s, :attribute => attribute, :value => record.send(attribute))
   end
 
   chain :on do |attribute|
